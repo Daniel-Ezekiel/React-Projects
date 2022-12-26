@@ -1,5 +1,5 @@
 import "../src/assets/css/App.scss";
-import "./assets/img/logo.svg";
+import windbnbLogo from "./assets/img/logo.svg";
 import { MdLocationPin, MdSearch } from "react-icons/md";
 import { useRef, useState } from "react";
 import Property from "./components/Property/Property";
@@ -201,7 +201,7 @@ function App() {
   return (
     <>
       <header>
-        <img src="../src/assets/img/logo.svg" alt="logo" />
+        <img src={windbnbLogo} alt="logo" />
 
         <div className="search-control">
           <select ref={locationRef} name="location" id="location">
