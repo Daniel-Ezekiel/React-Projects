@@ -1,0 +1,61 @@
+@import './variables';
+@import './mixin';
+
+.property{
+    @include flex(column, center, center);
+    gap: 2rem;
+    max-width: 35rem;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+    border-radius: 2.4rem;
+    width: 100%;
+    height: 26.7rem;
+    object-fit: cover;
+}
+
+.property-info{
+    @include flex(row, center, space-between);
+    flex-wrap: wrap;
+
+    div{
+        @include flex(row, center, space-between);
+        gap: 1.2rem;       
+
+        .super-host{
+            border: 0.1rem solid $locationFilterColor;
+            border-radius: 1.2rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $locationFilterColor;
+        }
+
+        .apartment-info{
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: $tagTextColor;
+        }
+    }
+
+    .apartment-rating{
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $tagTextColor;
+        @include flex(row, center, center);
+        gap: 0.5rem;
+
+        svg{
+            height: 1.4rem;
+            width: 1.4rem;
+            color: $btnAndIconColor;
+        }
+    }
+
+    p{
+        font-weight: 600;
+    }
+}
