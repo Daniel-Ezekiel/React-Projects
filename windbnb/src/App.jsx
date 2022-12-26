@@ -189,11 +189,13 @@ function App() {
 
     console.log(locationQuery, guestQuery);
 
-    setProperties(
-      allProperties.filter(
-        (e, i) => e.city === locationQuery && e.maxGuests >= guestQuery
-      )
-    );
+    locationQuery === "All Properties"
+      ? setProperties(allProperties)
+      : setProperties(
+          allProperties.filter(
+            (e, i) => e.city === locationQuery && e.maxGuests >= guestQuery
+          )
+        );
   }
 
   return (
@@ -203,6 +205,7 @@ function App() {
 
         <div className="search-control">
           <select ref={locationRef} name="location" id="location">
+            <option value="All Properties">All Properties</option>
             <option value="Helsinki, Finland">Helsinki, Finland</option>
             <option value="Turku, Finland">Turku, Finland</option>
             <option value="Oulu, Finland">Oulu, Finland</option>
@@ -214,6 +217,8 @@ function App() {
             id="guests"
             type="number"
             name="number of guests"
+            min="1"
+            max="10"
             placeholder="Add guests"
             onChange={(e) => e.currentTarget.value}
           />
